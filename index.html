@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Netseal privacy policy: how the local Android firewall handles installed apps, firewall rules and network activity on your device.">
+  <meta name="color-scheme" content="light dark">
+  <title>Privacy Policy | Netseal</title>
+  <style>
+    :root{color-scheme:light;--bg:#f5f7f2;--card:#fff;--ink:#17251e;--muted:#52645a;--accent:#276454;--line:#dce6dd;--tint:#e3f2e9}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
+    main{max-width:880px;margin:0 auto;padding:56px 24px 72px}.brand{display:flex;gap:12px;align-items:center;color:var(--accent);font-size:22px;font-weight:750;letter-spacing:-.5px}.brand svg{width:38px;height:38px;flex:none}
+    header{padding:28px 0 30px}h1{font-size:clamp(32px,6vw,48px);line-height:1.15;letter-spacing:-1.5px;margin:16px 0}h2{font-size:21px;line-height:1.4;margin:0 0 12px;letter-spacing:-.3px}
+    p{margin:0 0 14px}p:last-child{margin-bottom:0}.date,.subtitle,footer{color:var(--muted)}.subtitle{font-size:18px;max-width:640px}.summary{padding:22px 24px;border:1px solid var(--line);background:var(--tint);border-radius:18px;margin-bottom:24px}.summary strong{color:var(--accent)}
+    section{padding:26px 28px;background:var(--card);border:1px solid var(--line);border-radius:18px;margin:16px 0}ul{padding-left:22px;margin:10px 0}li{margin:7px 0}a{color:var(--accent);text-underline-offset:3px}code{font-size:.88em;overflow-wrap:anywhere}footer{font-size:14px;margin-top:30px;border-top:1px solid var(--line);padding-top:24px}
+    @media(max-width:540px){main{padding:30px 18px 48px}section{padding:22px 20px}.summary{padding:20px}}
+    @media(prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#0f1714;--card:#17221d;--ink:#ecf4ee;--muted:#b4c7bb;--accent:#a9e8c9;--line:#30473a;--tint:#193a2c}}
+    @media print{body{background:white;color:black}main{padding:0;max-width:none}section{break-inside:avoid;border-color:#ddd}.summary{background:none}}
+  </style>
+</head>
+<body>
+<main>
+  <div class="brand">
+    <svg viewBox="0 0 108 108" aria-hidden="true"><rect width="108" height="108" rx="24" fill="#123e32"/><path d="M54,24 L78,33 V51 C78,67 68,78 54,84 C40,78 30,67 30,51 V33 Z M41,64 V43 H46 L62,60 V43 H67 V65 H62 L46,48 V64 Z" fill="#a9e8c9" fill-rule="evenodd"/></svg>
+    <span>Netseal</span>
+  </div>
+  <header>
+    <h1>Privacy Policy</h1>
+    <p class="subtitle">How Netseal handles information while you control which Android apps can connect to the internet.</p>
+    <p class="date">Last updated: November 2, 2026</p>
+  </header>
+  <div class="summary"><strong>The essentials.</strong> Netseal applies firewall rules on your device. It does not send your installed-app list, firewall rules or network activity logs to the developer. It has no remote VPN server, account system, advertising SDK or analytics SDK.</div>
+  <section aria-labelledby="scope"><h2 id="scope">1. Scope</h2>
+    <p>This policy applies to the Netseal Android application, package <code>com.chronoit.netseal</code>. It describes the current local firewall implementation, including the information accessed on your device and the choices available to you.</p>
+  </section>
+  <section aria-labelledby="local-data"><h2 id="local-data">2. Information processed on your device</h2>
+    <ul>
+      <li><strong>Installed applications:</strong> Netseal reads app names, package identifiers, icons, Android user IDs (UIDs) and system-app status so it can display your apps and apply the rules you choose. This inventory is processed locally and is not uploaded to the developer.</li>
+      <li><strong>Firewall settings:</strong> Your per-app allow/block choices, default rule and permission-prompt preferences are saved in the application's private local storage.</li>
+      <li><strong>Network packet headers:</strong> For traffic routed through the local firewall, Netseal reads header information such as source and destination IP addresses, ports and protocol information needed to reject or discard packets.</li>
+      <li><strong>Recent activity:</strong> The application may display timestamps, IP addresses, ports, protocols and blocking details in its activity screen. It keeps up to 100 recent entries in memory. These entries are not saved as a persistent activity-history file or transmitted to the developer.</li>
+    </ul>
+    <p>Netseal does not parse, retain or log packet payload content, website URLs, passwords, messages, photos or other application content. It does not request access to your contacts, microphone, camera or precise location.</p>
+  </section>
+  <section aria-labelledby="vpn"><h2 id="vpn">3. How the local VPN is used</h2>
+    <p>Netseal uses Android's <code>VpnService</code> API, with your system VPN consent, to route blocked apps into a local interface where their traffic is rejected or discarded. Allowed apps use Android's ordinary network connection directly.</p>
+    <p>No remote VPN endpoint, proxy service or cloud packet-processing service is operated by Netseal. Netseal does not provide an encrypted tunnel to a remote server or hide your IP address from websites. Traffic from allowed apps remains subject to those apps' and your network provider's own privacy practices.</p>
+    <p>Android generally allows one active VPN per user. You can pause Netseal or revoke its VPN permission through Android settings. Saved rules are enforced only while protection is active.</p>
+  </section>
+  <section aria-labelledby="sharing"><h2 id="sharing">4. Collection, sharing and third parties</h2>
+    <p>Netseal does not collect the information described above on a developer-controlled server, sell it, or share it with advertisers or analytics providers. The current application does not include advertising, analytics, Firebase or other cloud-service SDKs, and it does not require an account.</p>
+    <p>Android and Google Play may independently process information to provide operating-system, app-distribution, security, diagnostic or backup services. Those services are governed by their providers' settings and privacy policies. This policy does not describe data handling by other installed apps or your internet provider.</p>
+  </section>
+  <section aria-labelledby="permissions"><h2 id="permissions">5. Android permissions</h2>
+    <ul>
+      <li><strong>Installed-app visibility (<code>QUERY_ALL_PACKAGES</code>):</strong> used to discover apps for per-app firewall management, including system apps and newly installed packages.</li>
+      <li><strong>VPN binding and consent:</strong> allow Android to connect to the local firewall service.</li>
+      <li><strong>Foreground service:</strong> keeps the firewall running while protection is active.</li>
+      <li><strong>Notifications:</strong> used to show ongoing firewall status. You control notification permission in Android settings.</li>
+      <li><strong>Internet and network-state permissions:</strong> declared for the application's network-related operation; they are not used to send telemetry or activity logs to the developer.</li>
+    </ul>
+  </section>
+  <section aria-labelledby="retention"><h2 id="retention">6. Retention, backup and deletion</h2>
+    <p>Saved firewall rules and preferences remain in the app's private storage until you change them or clear the application's data. Uninstalling removes that local application data, subject to Android's backup and restore behavior.</p>
+    <p>Recent activity entries are held in memory and can be removed with the activity screen's clear-logs action. They are also lost when the application's process is ended.</p>
+    <p>The current application permits Android-managed application backup. Depending on your device, Android version and backup settings, saved rules and preferences may be included in a system backup or transferred to another device. Netseal does not operate or control that backup service. Manage or delete such backups through your device or backup provider's settings. Uninstalling the app does not necessarily delete an existing system backup.</p>
+    <p>There is no Netseal cloud account or developer-hosted data record to delete.</p>
+  </section>
+  <section aria-labelledby="security"><h2 id="security">7. Security and your controls</h2>
+    <p>Netseal relies on Android's application sandbox for private local settings. Network blocking is performed locally. You can edit rules, pause protection, clear activity entries, clear app storage or uninstall the application.</p>
+    <p>No application or device can guarantee absolute security. A stopped or replaced VPN cannot enforce Netseal's saved app rules. This build does not support Android's “Block connections without VPN” lockdown setting.</p>
+  </section>
+  <section aria-labelledby="children"><h2 id="children">8. Children's privacy</h2>
+    <p>Netseal is a general-purpose network utility and is not specifically directed at children. It does not operate a personal-information collection or account-registration system for children or other users.</p>
+  </section>
+  <section aria-labelledby="changes"><h2 id="changes">9. Changes to this policy</h2>
+    <p>This policy may be updated when Netseal's functionality or information-handling practices change. The current version will be posted on this page with a revised update date. If a future feature changes data access or collection, the application will provide any required disclosure and permission request before that feature is used.</p>
+  </section>
+  <section aria-labelledby="contact"><h2 id="contact">10. Contact</h2>
+    <p>For privacy questions or concerns about Netseal, email <a href="mailto:chronoitofficial@gmail.com">chronoitofficial@gmail.com</a>. Include “Netseal privacy” in your message. Do not send passwords, packet payloads or other sensitive information.</p>
+  </section>
+  <footer>Netseal &middot; Android application <code>com.chronoit.netseal</code><br>This webpage uses no analytics, third-party fonts, cookies or external scripts. Its hosting provider may process ordinary web-server access logs under its own practices.</footer>
+</main>
+</body>
+</html>
